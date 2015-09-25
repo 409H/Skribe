@@ -1,0 +1,73 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    block title
+      title Scribe
+    meta(name="description" content="")
+    meta(name="author" content="Callum Bonnyman")
+
+    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet', href='/stylesheets/icons.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton.css')
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+
+    script(type="text/javascript" src="/javascript/jquery.js")
+    script(type="text/javascript" src="/javascript/script.js")
+    
+    block header
+    
+  body
+
+    if(messages.info)
+      .messages.info
+        .container
+          .sixteen.columns
+            span= messages.info
+
+    div.container
+
+      block headerSection
+      
+        header(id="main" class="sixteen columns")
+          .branding
+            h1
+
+              a(href="/")
+                i.icon-logo
+                | Skribe
+            h5 Write Beautiful Documents
+
+          if user
+            nav.clearfix
+              .img
+                img(src=user.profile_small_image_url class="display-image")
+              .links
+                a(href="/user/" + user.username id="profilelink")= user.username
+                a(href="/auth/logout" id="logoutlink") Logout <i class="icon-exit"></i>
+          else
+            nav.clearfix
+              a(href="/auth/login" class="btn has-icon") <i class="icon-twitter"></i> Login with Twitter
+
+
+      block content
+
+      footer(id="main" class="sixteen columns")
+        .branding
+          i.icon-logo
+          p Scribe is a free tool developed by <a href="http://wrux.me/" target="_blank">Callum</a>
+
+          ul
+            li
+              a(href="/guide") Guide
+            li &bull;
+            li
+              a(href="/about") About
+            li &bull;
+            li
+              a(href="/contact") Contact
+            li &bull;
+            li
+              a(href="/tos") TOS

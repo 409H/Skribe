@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title= title
+    meta(name="description" content="")
+    meta(name="author" content="Callum Bonnyman")
+
+    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet', href='/stylesheets/flaticon.css')
+    link(rel='stylesheet', href='/stylesheets/skeleton.css')
+    link(rel='stylesheet', href='/stylesheets/editor.css')
+
+    meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+
+    script(type="text/javascript" src="/javascript/jquery.js")
+    script(type="text/javascript" src="/javascript/script.js")
+  body
+
+
+    if guide
+      p GUIDE
+
+    if(messages.info)
+      .messages.info
+        .container
+          .sixteen.columns
+            span= messages.info
+
+
+    form(method="post" action="#{formAction}")
+
+      header(id="main" class="sixteen columns")
+        div.container
+
+          div(class="inner sixteen columns")
+            h1.remove-bottom
+              a(href="/") Scribe
+
+      section(id="content" class="sixteen columns")
+
+        div.container
+          div(class="sixteen columns")
+            textarea(id="editor" placeholder="Write something..." name="content")= post.body
+
+      footer#main
+
+        div.container
+          div(id="savebox" class="sixteen columns")
+            label(for="private") Private
+            input(type="checkbox" name="private" checked=post.private)
+
+            button.btn Save

@@ -1,0 +1,54 @@
+@font-face {
+	font-family: 'scribe';
+	src:url('../fonts/scribe.eot?js4q7r');
+	src:url('../fonts/scribe.eot?#iefixjs4q7r') format('embedded-opentype'),
+		url('../fonts/scribe.woff?js4q7r') format('woff'),
+		url('../fonts/scribe.ttf?js4q7r') format('truetype'),
+		url('../fonts/scribe.svg?js4q7r#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'scribe';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+[class^="icon-"]:before, [class*=" icon-"]:before,
+[class^="icon-"]:after, [class*=" icon-"]:after {
+	font-size: 28px;
+	font-style: normal;
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}
+
+
+.icon-logo:before {
+	content: "\e600";
+}
+.icon-quill:before {
+	content: "\e601";
+}
+.icon-undo:before {
+	content: "\e602";
+}
+.icon-eye:before {
+	content: "\e603";
+}
+.icon-cancel:before {
+	content: "\e604";
+}
+.icon-exit:before {
+	content: "\e605";
+}
+.icon-twitter:before {
+	content: "\e606";
+}
+.icon-location:before {
+	content: "\e607";
+}

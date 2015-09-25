@@ -1,0 +1,190 @@
+/*
+* Skeleton V1.2
+* Copyright 2011, Dave Gamache
+* www.getskeleton.com
+* Free to use under the MIT license.
+* http://www.opensource.org/licenses/mit-license.php
+* 6/20/2012
+*/
+
+
+/* Table of Content
+==================================================
+	#Site Styles
+	#Page Styles
+	#Media Queries
+	#Font-Face */
+
+/* #Site Styles
+================================================== */
+/* body {
+	background: url(../images/crossword.png);
+} */
+
+.push-top {
+	margin-top: 2em;
+}
+
+.pad { padding: 1em; }
+.pad.small { padding:  0.5em; }
+
+/*	Button
+.btn {
+	position: relative;
+	border: 1px solid #ddd;
+	padding: 0.5em;
+	text-decoration: none;
+	border-radius: 3px;
+	-webkit-transition: all 400ms ease-out;
+		 -moz-transition: all 400ms ease-out;
+			-ms-transition: all 400ms ease-out;
+			 -o-transition: all 400ms ease-out;
+					transition: all 400ms ease-out;
+}
+
+.btn.has-icon { padding: 0.5em 0.5em 0.5em 38px; }
+.btn.large { font-size: 1.3em; }
+.btn i {
+	position: absolute;
+	left: 0;
+	color: #9ae4e8;
+	font-size: 14px;
+	-webkit-transition: color 800ms ease-in;
+		 -moz-transition: color 800ms ease-in;
+			-ms-transition: color 800ms ease-in;
+			 -o-transition: color 800ms ease-in;
+					transition: color 800ms ease-in;
+}
+
+.btn:hover {
+	background: #3796C6;
+	border-color: #3796C6;
+	color: #fff;
+}
+.btn.red { color: #c63e37;font-weight: 800 }
+.btn.red i { color: #c63e37; }
+.btn.red:hover { background: #c63e37; color: #fff; border-color: #c63e37 }
+.btn.red:hover i{ color: #fff; }
+
+.btn:hover i { color: #fff; }
+
+.btn.icon-small {
+	padding-left: 28px;
+}
+.btn.icon-small i:before {
+	font-size: 20px;
+} */
+
+/* #Page Styles
+================================================== */
+
+
+header#main {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+}
+header#main .inner {
+	opacity: 0.2;
+	-webkit-transition: opacity 300ms ease-in;
+	 	 -moz-transition: opacity 300ms ease-in;
+			-ms-transition: opacity 300ms ease-in;
+		 	 -o-transition: opacity 300ms ease-in;
+					transition: opacity 300ms ease-in;
+}
+header#main .inner { border-bottom: 1px solid #ddd; }
+header#main .inner:hover { opacity: 1; }
+header#main .branding {
+	margin: 0.5em 0;
+}
+header#main h1 {
+	font-size: 1.5em;
+	margin: 0;
+	padding: 0;
+}
+header#main h1 a {
+	text-decoration: none;
+}
+header#main nav {
+}
+
+section#content {
+	position: absolute;
+	top: 88px;
+	bottom: 96px;
+	width: 100%;
+}
+section#content .container, section#content .sixteen, section#content #editor {
+	height: 100%;
+}
+section#content #editor {
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-size: 20px;
+	font-family: monospace, serif;
+	letter-spacing: 1px;
+
+	resize: none;
+  border: none;
+  overflow: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+
+footer#main {
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 45px;
+	border-top: 1px solid #ddd;
+	background: #f5f5f5;
+	opacity: 0.3;
+	padding-top: 12px;
+	-webkit-transition: opacity 300ms ease-in;
+			moz-transition: opacity 300ms ease-in;
+			-ms-transition: opacity 300ms ease-in;
+			 -o-transition: opacity 300ms ease-in;
+					transition: opacity 300ms ease-in;
+}
+footer#main:hover { opacity: 1; }
+
+div#savebox {
+	text-align: right;
+}
+div#savebox label {
+	font-weight: bold;
+	margin-right: 0.25em
+}
+
+
+/* #Media Queries
+================================================== */
+
+	/* Smaller than standard 960 (devices and browsers) */
+	@media only screen and (max-width: 959px) {}
+
+	/* Tablet Portrait size to standard 960 (devices and browsers) */
+	@media only screen and (min-width: 768px) and (max-width: 959px) { }
+
+	/* Anything bigger than a small browser */
+	@media only screen and (min-width: 768px) {
+
+	}
+
+	/* All Mobile Sizes (devices and browser) */
+	@media only screen and (max-width: 767px) {
+
+	}
+
+	/* Mobile Landscape Size to Tablet Portrait (devices and browsers) */
+	@media only screen and (min-width: 480px) and (max-width: 767px) {}
+
+	/* Mobile Portrait Size to Mobile Landscape Size (devices and browsers) */
+	@media only screen and (max-width: 479px) {}

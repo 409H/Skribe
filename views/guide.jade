@@ -1,0 +1,187 @@
+extends layout
+
+block title
+  title Usage Guide | Scribe
+
+block content
+
+  section(id="content" class="sixteen columns")
+
+    h1  Markdown Guide
+
+
+    h2  Background
+    p Markdown is intended as an easy and easy to write.
+    p Unlike other simple document markup such as BBcode, readability is important. Markdown is formatted as plain text, without any additional styling.
+
+
+    h2  Block Elements
+    p Block elements such as paragraphs or headings are important in plain text and formatted text.
+
+
+    h3  Headers
+    p There are two ways of creating headers in markdown, each give the same output and it is purely cosmetic in plain text form.
+    p This below is the most readable header style and you will come across this quite regurlarly
+    pre
+      | This is Header 1
+      | =====================
+      | This is Header 2
+      | ---------------------
+    p There are two alternative styles which allow up to 6 headers deep.
+    pre
+      | # This is Header 1
+      | ## This is Header 2
+      | ### This is Header 3
+      | #### This is Header 4
+      | ##### This is Header 5
+      | ###### This is Header 6
+
+    p An alternative style is to close the header which is purely cosmetic. If you think it looks better then use it.
+    pre
+      | # This is Header 1 #
+      | ## This is Header 2 ##
+      | ### This is Header 3 ###
+      | #### This is Header 4 ####
+      | ##### This is Header 5 #####
+      | ###### This is Header 6 ######
+
+
+    h3  Blockquotes
+    p Markdown uses similar style block quotes to how you would find them in emails. If you send a lot of emails you will recognise this style.
+      | You simply need to put a > character before every line in the block quote. The lines do not need to wrap, for example it could be on a single
+      | line, however for readability, wrapping lines will work the same.
+    pre
+      | > This is a markdown block quote.
+      | > Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+      | > Cum sociis natoque penatibus et magnis dis parturient montes,
+      | > nascetur ridiculus mus.
+
+    p Block quotes can be nested by adding more levels of chevrons:
+    pre
+      | > This is a markdown block quote with a nested block quote.
+      | > > Integer posuere erat a ante venenatis dapibus posuere velit aliquet.
+      | > > Cum sociis natoque penatibus et magnis dis parturient montes,
+    p Block quotes can also contain additional markdown, including headers and images:
+    pre
+      | > This is a markdown block quote with animage and bold text.
+      | > ![test](http://lorempixel.com/output/animals-h-c-284-480-6.jpg)
+      | > *TEST*
+
+
+    h3 Lists
+    p Markdown has support for ordered and unordered lists. Ordered lists are numbered and unordered lists are bullet points.
+    pre
+      | + List element 1
+      | + List element 2
+      | + List element 3
+    p  An alternative style also produces the same output:
+    pre
+      | - List element 1
+      | - List element 2
+      | - List element 3
+    p Ordered lists are can be created by listing the numbers. The list numbers are arbitrary as markdown generates html list,
+      | but try and start the list with a number 1 as it is logical.
+    pre
+      | 1. John
+      | 2. Steve
+      | 3. Craig
+
+
+    h3  Code Blocks
+    p Code blocks or pre formatted code that needs to preserve white-space can be created by indenting every line by atleast
+      | 4 spaces or a tab.
+    pre
+      |     &lt;h1&gt;Hello World&lt;/h1&gt;
+      |     &lt;h2&gt;This is My Website&lt;/h2&gt;
+      |     &lt;p&gt;This is the content&lt;/p&gt;
+      |     &lt;p&gt;My website is great&lt;/p&gt;
+
+
+    h3  Horizontal Rules
+    p You can create a horizontal rule by placing three or more hyphens (or underscores or asterisks) on a line by themselves.
+      | You can also use spaces between the characters but this is purely cosmetic. The following lines will each produce a horizontal rule:
+    pre
+      | - - - - - - - <br />
+      | ------------- <br />
+      | * * * <br />
+      | _____________
+    p Note that there must be a line space before and after the horizontal rule for it to be created.
+
+
+
+    h2 Span Elements
+    p Span elements are contained within the paragraphs etc. These can be links, bold text and even images.
+
+
+    h3  Links
+    p Markdown has a simple style for links. The syntax for hyperlinks is <code>[Link text](link)</code> and for example:
+    pre
+      | [Link to google](http://google.com/)
+    p You can also use an optional title. Titles show on link hover:
+    pre
+      | [Link to google](http://google.com/ "This is a link to google")
+
+
+    h3  Text Styling
+    p There are two types of text styling, italics and bold. These are achieved in a similar way. This markdown will produce both using two
+      | different styles.
+    pre
+      | *single asterisks for italics*
+      | _single underscores for italics_
+      | **double asterisks for bold**
+      | __double underscores for bold__
+
+    h3  Code
+    p You can have inline code, this is wrapped in a similar style to how the code blocks look but in the line. Code inline is typically
+      | used to display small segments of code or file paths etc. The syntax uses the ``text`` ticks and you can use single,
+      | however it may run into issues if the code contains a ` tick.
+    pre
+      | This code: `<b>strong text</b>` is inline.
+
+
+    h3  Images
+    p Images are a bit of an anomaly as you cannot really display them correctly in a plain text document. The style of images is very
+      | similar to links. It may look slightly odd in plain text form as you can only see the URL, but that is the limitation of
+      | plain text. Images are created with the same syntax as links, however they start with the exclamation mark "!".  For example:
+    pre
+      | ![Alternative text](http://example.com/logo.png "Optional image title")
+    p If the image is not found, the text in the square brackets is shown, it is also known as the alternative text.
+
+
+
+    h2  Miscellaneous
+    p You may require some additional structure in your document. These do not specifically fit in a category, but they may
+      | be useful.
+
+
+    h3  Links
+    p There is a shorthand style for links. The conventional way displays the link as a text.
+      | You may not want to display the title of a link, you may want to use just the URL and the style for this is very simple.
+      | You just need to enclose the URL like this: <URL here> and you can even use email addresses. Here is an example:
+    pre
+      code
+        | &lt;http://skribe.it/&gt;
+        | &lt;example@skribe.it&gt;
+    p The link will be displayed with the URL which is probably better practice for linking to websites if you want to use our PDF creator.
+      | Emails will be displayed similarly, however when you click the link it opened up your email client.
+    p Be careful displaying your email like this, there are spam bots that <em>will</em> eventually find this email. If you have your document
+      | listed as private you are less likely to encounter this problem.
+
+
+    h3  Escaping
+    p If you are encountering problems with characters interfering with your document elements, for example a * inside of the italic
+      | text may cause it to close early, this is where escaping comes into effect. You can prefix characters with the back slash which
+      | treats it as the literal character. Markdown provides support for a number of these characters:
+    pre
+      | \\  backslash
+      | \`  backtick
+      | \*  asterisk
+      | \_  underscore
+      | \#  hash
+      | \+  plus
+      | \-  minus
+      | \.  dot
+      | \!  exclamation mark
+      | \{} curly brackets
+      | \[] square brackets
+      | \() parentheses

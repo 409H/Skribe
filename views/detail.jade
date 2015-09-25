@@ -1,0 +1,117 @@
+extends layout
+
+block title
+  title #{post.title} | Scribe
+
+block header
+
+  meta(property="twitter:card" content="summary")
+  meta(property="twitter:site" content="@skribeit")
+  meta(property="twitter:title" content="Skribe - " + post.title)
+  meta(property="twitter:description" content="View the document created by @" + post.user.username)
+  meta(property="twitter:url" content="http://skribe.it/p/" + post._id)
+  
+block headerSection
+
+  section(id="content" class="sixteen columns document-detail")
+
+    header.sixteen.columns
+    
+      #handle: a(href="#")
+        span Document Details
+        i.icon-logo 
+      #content
+        
+        #profile.five.columns.alpha
+          .pad
+            img(src=post.user.profile_small_image_url class="display-image image-small")
+            ul
+              li.display-name: a(href="/user/" + post.user.username)= post.user.displayName
+              li.username: a(href="https://twitter.com/" + post.user.username, target="_blank") @#{post.user.username}
+          
+        #info.five.columns.alpha
+          .pad
+            h5 Information
+            ul
+              li Created: 23 June 2014
+              li Updated: 28 June 2014
+              li 23,483 Views
+              li: a(href="/p/" + post._id + "/download") Download PDF
+          
+        #share.beta
+          .pad
+            h5 Share
+            ul
+              li: a(
+                href="https://twitter.com/share",
+                class="twitter-share-button",
+                data-url="http://skribe.it/p/" + post._id,
+                data-via="skribeit",
+                data-text="Document created using Skribe",
+                data-related="skribeit:Offical Skribe Twitter, wrux:Skribe developer",
+                data-lang="en",
+                data-size="large",
+                data-count="none",
+              ) Tweet
+              li: div(class="g-plus", data-action="share", data-annotation="none") &nbsp;
+
+block content
+
+  section(id="content" class="sixteen columns document-detail")
+
+    // 
+      header.sixteen.columns
+      
+        #handle: a(href="#")
+          span Document Details
+          i.icon-logo 
+        #content
+          
+          #profile.five.columns.alpha
+            .pad
+              img(src=post.user.profile_small_image_url class="display-image image-small float")
+              ul.display-image-margin-left
+                li.display-name: a(href="/user/" + post.user.username)= post.user.displayName
+                li.username: a(href="https://twitter.com/" + post.user.username, target="_blank") @#{post.user.username}
+            
+          #info.five.columns.alpha
+            .pad
+              ul
+                li Created: 23 June 2014
+                li Last Updated: 28 June 2014
+                li 23,483 Views
+                li: a(href="/p/" + post._id + "/download") Download PDF
+            
+          #share.beta
+            .pad
+              ul
+                li: a(
+                  href="https://twitter.com/share",
+                  class="twitter-share-button",
+                  data-url="http://skribe.it/p/" + post._id,
+                  data-via="skribeit",
+                  data-text="Document created using Skribe",
+                  data-related="skribeit:Offical Skribe Twitter, wrux:Skribe developer",
+                  data-lang="en",
+                  data-size="large",
+                  data-count="none",
+                ) Tweet
+                li: div(class="g-plus", data-action="share", data-annotation="none") &nbsp;
+        
+
+    div(class="sixteen columns")
+      div.content!= md
+      
+    // Twitter Tweet Button
+    <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+    
+    // FB Share Button
+    <div id="fb-root"></div>
+    script(type="text/javascript").
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/en_GB/sdk.js#xfbml=1&appId=1420201128256964&version=v2.0";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));

@@ -1,0 +1,22 @@
+extends layout
+
+block title
+  title Documents | Scribe
+
+block content
+
+  section(id="content" class="sixteen columns")
+
+    .five.columns.alpha &nbsp;
+    .six.columns.omega.text-center
+
+      h2 Welcome
+      p Hello #{user.displayName}, it looks like you have not created any documents yet.
+
+      p.pad-b Skribe uses <a href="/guide">markdown</a> to display your document. Go and learn how ot make beautiful documents before you get started.
+
+      p
+        a(href="/new?getstarted" class="btn large has-icon") <i class="icon-quill"></i> Get Started
+
+      p
+        a(href="/guide" class="btn") Markdown Guidelines

@@ -1,0 +1,44 @@
+extends layout
+
+block title
+  title #{u.username} | Scribe
+
+block content
+
+  section(id="content" class="sixteen columns")
+    .four.columns.alpha.profile-data
+
+      img(src=u.profile_image_url class="display-image")
+
+      h3= u.displayName
+
+      p.twitter
+        a(href="/" class="btn has-icon icon-small text-uppercase") <i class="icon-twitter"></i> @#{u.username}
+      if u.location
+        p.location
+          i.icon-location
+          | #{u.location}
+
+    .twelve.columns.omega
+
+      if posts.length
+        each post in posts
+
+          article(class="document twelve columns")
+            header(class="ten columns alpha")
+              .pad
+                a(href="/p/" + post._id)
+                  h3= post.title
+                h4 #{moment(post.updated).calendar()}
+
+            div(class="links six columns omega")
+              ul
+                li
+                  a(href="/p/" + post._id)
+                    span.label View
+                    i.icon-eye
+
+      else
+
+        h2 No Documents
+        p This user does not yet have any public documents

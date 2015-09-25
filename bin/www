@@ -1,0 +1,10 @@
+#!/usr/bin/env node
+var debug = require('debug')('skribe');
+var app = require('../app');
+
+app.set('domain', '0.0.0.0');
+app.set('port', process.env.PORT || 24481);
+
+var server = app.listen(app.get('port'), function() {
+  debug('Express server listening on port ' + server.address().port);
+});

@@ -1,0 +1,36 @@
+extends layout
+
+block title
+  title Documents | Scribe
+
+block content
+
+  section(id="content" class="sixteen columns")
+
+    div(class="sixteen columns")
+      p
+        a(href="/new" class="btn") New Document
+
+    each post in posts
+
+      article(class="document sixteen columns")
+        header(class="ten columns alpha")
+          .pad
+            a(href="/p/" + post._id)
+              h3= post.title
+            h4 #{moment(post.updated).calendar()}
+
+        div(class="links six solumns omega")
+          ul
+            li
+              a(href="/p/" + post._id + "/edit")
+                span.label Edit
+                i.icon-quill
+            li
+              a(href="/p/" + post._id)
+                span.label View
+                i.icon-eye
+            li
+              a(href="/p/" + post._id + "/delete")
+                span.label Delete
+                i.icon-cancel.icon-red
