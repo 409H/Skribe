@@ -29,5 +29,8 @@
     "shortid": "^2.0.1",
     "static-favicon": "~1.0.0",
     "mongoose": "3.8.15"
-  }
+  },
+  "engines": {
+    "node": "4.1.1"
+  },
 }
