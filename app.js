@@ -40,6 +40,7 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
 // configure mongoose connection
+console.log(app.get('SKRIBE_DB') + config.database);
 mongoose.connect(app.get('SKRIBE_DB') + config.database);
 
 app.use(
