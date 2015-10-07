@@ -40,8 +40,8 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
 // configure mongoose connection
-console.log(process.env.SKRIBE_DB);
-mongoose.connect(process.env.SKRIBE_DB);
+console.log(process.env.MONGOLAB_URI);
+mongoose.connect(process.env.MONGOLAB_URI);
 
 app.use(
   session({
