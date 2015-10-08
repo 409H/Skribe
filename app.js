@@ -9,6 +9,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var MongoStore = require('connect-mongo')(session);
+var uriUtil = require('mongodb-uri');
 
 var routes = require('./routes/index');
 var posts = require('./routes/posts');
@@ -40,8 +41,12 @@ app.use(bodyParser.urlencoded());
 app.use(cookieParser());
 
 // configure mongoose connection
-console.log(process.env.MONGOLAB_URI);
-mongoose.connect(process.env.MONGOLAB_URI);
+var mongooseUri = uriUtil.formatMongoose(process.env.MONGOLAB_URI);
+var options = { server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }, 
+                replset: { socketOptions: { keepAlive: 1, connectTimeoutMS : 30000 } } };
+                
+console.log(mongooseUri);
+mongoose.connect(mongooseUri, options);
 
 app.use(
   session({
